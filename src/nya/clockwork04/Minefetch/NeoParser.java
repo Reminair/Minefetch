@@ -42,14 +42,19 @@ public class NeoParser {
 
     private void distroDetect() {
         String distroString = neomap.get("OS");
-        if (distroString.contains("Arch")) {
-            neocolor = ChatColor.AQUA;
-        } else if (distroString.contains("Debian")) {
-            neocolor = ChatColor.RED;
-        } else if (distroString.contains("Gentoo")) {
-            neocolor = ChatColor.DARK_PURPLE;
-        } else {
-            neocolor = ChatColor.BLUE;
+
+        switch (distroString) {
+            case "Arch":
+                neocolor = ChatColor.AQUA;
+                break;
+            case "Debian":
+                neocolor = ChatColor.RED;
+                break;
+            case "Gentoo":
+                neocolor = ChatColor.DARK_PURPLE;
+                break;
+            default:
+                neocolor = ChatColor.BLUE;
         }
     }
 
